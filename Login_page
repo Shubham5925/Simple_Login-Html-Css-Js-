@@ -1,0 +1,209 @@
+#simple_Login page using HTML CSS JAVASCRIPT
+
+<!Doctype html>
+<html>
+<head>
+<meta charset=UTR-8>
+<meta name="decsription" content="Html Css Javascript" >
+<meta name="author" content="Shubham Singh">
+<meta name="keyword" contert="loginpage">
+<title>Login_page</title>
+</head>
+
+<body>
+
+<div id="login_page">
+<h2 id="login_heading"><center><b>LOGIN</b></center></h2>
+<fieldset id="fieldset_design">
+<legend align="center"><b><u><h3>Login</h3></u></b></legend>
+<span>
+<label><b>First Name:</b></label>
+<input type="text" name="first" id="first" placeholder="firstname">
+<button onclick="verify1()">verify</button><br><br>
+</span>
+<span>
+<label><b>Last Name:</b></label>
+<input type="text" name="second" id="second" placeholder="lastname">
+<button onclick="verify2()">verify</button><br><br>
+</span>
+<label><b>Ph.Number:</b></label>
+<span> 
+<input type="text" name="" id="mobilenumber" value="" placeholder="mobile no">
+<button onclick="verify3()">verify</button><br><br>
+</span>
+
+<p>Are you free to provide details[tick] if agree</p>
+<input type="checkbox" name="Remember" id="tick" required>I Agree
+<h3 id="first1"></h3>
+<h3 id="second2"></h3>
+<h3 id="verify"></h3>
+
+<div id="login_button">
+<button onclick="login()">LogIn</button>
+</div>
+
+</fieldset>
+</div>
+
+
+
+
+
+
+<!--javascript code from here -->
+<script type="text/javascript">
+	function verify1()
+	{
+		var a=document.getElementById("first").value;
+		if(a=="")
+		{
+			document.getElementById("first1").innerHTML="<h3>**Please enter name</h3>";
+		}
+		else if(a!=="")
+		{	
+			if( (a!=="") && (a.length>=3) && (a.length<=20))
+			{
+				document.getElementById("first1").innerHTML="<h3>Next</h3>";
+			}
+		}
+		else if(a!=="")
+		{
+			document.getElementById("first1").innerHTML="<h3>Enter valid Name</h3>";
+		}
+		
+	}
+			
+	function verify2()
+	{
+		var a=document.getElementById("second").value;
+		if(a=="")
+		{
+		        document.getElementById("second2").innerHTML="<h3>**Please enter name</h3>";
+		}
+		else if(a!=="")
+		{	
+			if( (a!=="") && (a.length>3) && (a.length<20))
+			{
+				document.getElementById("second2").innerHTML="<h3>Next</h3>";
+			}
+		}
+		else if(a!=="")
+		{
+			document.getElementById("second2").innerHTML="<h3>Enter valid Name</h3>";
+		}
+		
+	}
+	function verify3()
+	{
+		var a=document.getElementById("mobilenumber").value;
+		//var b=a.charCodeAt(0);
+		if(a=="")
+		{
+		       //prompt("Enter the mobile number[Empty] ")
+		       document.getElementById("verify").innerHTML="<h3>**Please enter no</h3>";
+		}
+		/*if((b>=65 && b<=90) || (b>=97 && b<=122) )
+		{
+			document.getELementById("verify").innerHTML="<h3>**No Charachters allowed</h3>";
+		}*/
+		if(isNaN(a))
+		{
+			document.getElementById("verify").innerHTML="<h3>**Enter digits only[0-9]</h3>";
+		}
+		if(a.length==10)
+		{
+			document.getElementById("verify").innerHTML="<h3>**Correct</h3>";
+		}		
+		
+		if(a.length>=1 && a.length<10)
+		{
+			document.getElementById("verify").innerHTML="<h3>**Number less than 10 digits</h3>";
+		}
+		if(a.length>10)
+		{
+			document.getElementById("verify").innerHTML="<h3>**Number exceed than 10 digits</h3>";	
+		}
+		
+		
+		/*if((a.charAt(0)!=9) && (a.charAt(0)!=8) && (a.charAt(0)!=7))
+		{
+			document.getElementById("verify").innerHTML="<h3>**number must start with 9-8-7 </h3>;
+		}*/
+		
+		
+			
+	}
+</script>
+<script type="text/javascript">
+	function login()	
+	{
+		var win=window.open("about:blank","_blank");
+		win.document.write("Successfully Login !!!!");
+	}
+</script>
+		
+				
+		
+		
+	
+
+
+
+<!--CSS style is used here-->
+<style>
+#login_heading
+{
+	border:3px solid black;
+	border-bottom:solid;
+	border-color:red;
+	align-items:center;
+	width:100px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:2px;
+	
+}
+#login_page
+{
+	border:5px solid black;
+	background-color:yellow;
+	width:400px;
+	height:500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:60px;
+}
+#fieldset_design
+{
+	background-color:lightgreen;
+	width:300px;
+	height:380px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:1px;
+	border-radius:10px;
+	
+}
+
+#legend_heading
+{
+	border:3px solid black;
+}
+
+#login_button
+{
+	 
+	margin-left:auto;
+	margin-right:auto;
+	width:30%;
+		
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+
